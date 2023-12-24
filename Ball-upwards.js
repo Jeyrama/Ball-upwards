@@ -30,3 +30,16 @@ function maxBall(v0) {
 }
 
 // or
+
+function maxBall(v0) {
+
+  // Linear coefficient - initial speed, unit conversion form km/h to m/s
+  v0 *= 1000 / 3600;
+
+  // Quadratic coefficient - Earth's gravity constant, in m/s**2
+  const g = 0.5 * 9.81;
+
+  // Solving linear equation: (v0 - g * t) * t = 0
+  // Converting time from seconds to tenths of second
+  return Math.round(v0 / g * 5);
+}
